@@ -17,6 +17,8 @@
     "empty": "Ni posnetkov za pregled.",
     "wakeTime": "Čas zbujanja",
     "transcript": "Vsebina",
+    "play": "Predvajaj",
+    "pause": "Ustavi",
     "markReviewed": "Označi kot pregledano",
     "markUnreviewed": "Označi kot nepregledano",
     "delete": "Izbriši",

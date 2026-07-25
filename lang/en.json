@@ -17,6 +17,8 @@
     "empty": "Nothing to review yet.",
     "wakeTime": "Wake time",
     "transcript": "Content",
+    "play": "Play",
+    "pause": "Pause",
     "markReviewed": "Mark reviewed",
     "markUnreviewed": "Mark unreviewed",
     "delete": "Delete",

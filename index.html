@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Echo</title>
 <link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icons/favicon.ico" sizes="any">
+<link rel="icon" href="./icons/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
 <meta name="theme-color" content="#0B0908">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -309,11 +312,41 @@
     font-size: 12px;
     cursor: pointer;
   }
-  .capture-audio {
-    width: 100%;
-    height: 32px;
+  .audio-player {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-elevated-2);
+    border-radius: 10px;
+    padding: 8px 12px;
     margin-bottom: 8px;
-    filter: invert(0.9) sepia(0.15) saturate(2) hue-rotate(320deg);
+  }
+  .audio-play-btn {
+    flex: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: var(--ember-dim);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .audio-play-btn svg { width: 14px; height: 14px; }
+  .audio-seek {
+    flex: 1;
+    height: 3px;
+    accent-color: var(--ember);
+  }
+  .audio-time {
+    flex: none;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-faint);
+    min-width: 38px;
+    text-align: right;
   }
   .transport-option {
     display: flex;

@@ -3,6 +3,31 @@
 All notable changes to Echo are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.2.3] — 2026-07-25
+
+### Fixed
+- **Favicon 404** — added `<link rel="icon">`/`apple-touch-icon` tags.
+- **Audio review player showed untranslatable native browser UI.** The
+  native `<audio controls>` context menu ("More options", "Download",
+  "Playback speed", etc.) is rendered by the browser itself in the
+  browser's own language — it was never a hardcoded string in Echo and
+  can't be translated via the page. Replaced it with a small custom player
+  (play/pause button, seek bar, elapsed/total time) built on a bare
+  `<audio>` element with no native controls at all, so every visible label
+  goes through `lang/sl.json` / `lang/en.json` like the rest of the app.
+- **Favicon redesigned for small sizes.** The main app icon's thin
+  concentric rings disappear at 16×16. Added a simplified favicon (one bold
+  ring + solid center dot) as `favicon.ico` (16/32/48) and `favicon-32.png`;
+  the original detailed icon is kept for the larger PWA/home-screen icon
+  where it still reads clearly.
+
+### Known limitations (updated)
+- Documented that the relay-over-HTTP-from-HTTPS setup currently works via
+  browser leniency (Chrome warns but doesn't yet block Private Network
+  Access requests) rather than a real guarantee — see `docs/CHANGELOG.md`
+  known limitations below for the follow-up plan (`mkcert`) if/when it
+  breaks.
+
 ## [0.2.2] — 2026-07-25
 
 ### Fixed
@@ -148,6 +173,16 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `SCHEMA.md`, `INTEGRATION.md` documentation.
 
 ### Known limitations
+- **Relay over HTTP from an HTTPS-hosted Echo (e.g. Vercel) relies on
+  browser leniency that isn't guaranteed to last.** Chrome currently only
+  *warns* in the console about this (Private Network Access enforcement is
+  being rolled out gradually) rather than blocking it, so it works today —
+  but a future browser update could turn that into an outright block with
+  no change needed on Echo's side. If/when that happens, the real fix is
+  giving the relay server a locally-trusted HTTPS certificate (e.g. via
+  `mkcert`) instead of plain HTTP, which was deliberately not built yet
+  since the current setup works and mkcert requires installing a root
+  certificate on the phone.
 - Relay has no rate limiting or request size cap — fine for personal use,
   worth adding before wider distribution.
 - Transcription runs on WASM only; Transformers.js also supports WebGPU

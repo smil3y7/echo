@@ -2,7 +2,7 @@
 // Note: the Whisper model itself is cached separately by Transformers.js
 // (Cache Storage), this only covers the app's own HTML/JS/CSS/lang files.
 
-const CACHE_NAME = "echo-shell-v7";
+const CACHE_NAME = "echo-shell-v8";
 const SHELL_FILES = [
   "./index.html",
   "./manifest.json",
@@ -26,6 +26,8 @@ const SHELL_FILES = [
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/icon-512-maskable.png",
+  "./icons/favicon.ico",
+  "./icons/favicon-32.png",
 ];
 
 self.addEventListener("install", (event) => {
