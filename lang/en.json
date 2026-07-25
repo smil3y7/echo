@@ -1,0 +1,84 @@
+{
+  "app": { "name": "Echo", "tagline": "Catch the dream before it fades" },
+  "nav": { "record": "Record", "review": "Review", "settings": "Settings" },
+  "record": {
+    "start": "Start recording",
+    "stop": "Stop",
+    "recording": "Recording …",
+    "processing": "Transcribing …",
+    "loadingModel": "Loading transcription model (one-time) …",
+    "continuesPrevious": "Continues previous dream",
+    "newDream": "New dream",
+    "sessionPrompt": "Last capture was recent — is this a continuation?",
+    "savedToast": "Saved"
+  },
+  "review": {
+    "title": "Review captures",
+    "empty": "Nothing to review yet.",
+    "wakeTime": "Wake time",
+    "transcript": "Content",
+    "markReviewed": "Mark reviewed",
+    "markUnreviewed": "Mark unreviewed",
+    "delete": "Delete",
+    "confirmDelete": "Delete this capture? This can't be undone.",
+    "exportSession": "Export this night",
+    "exportSuccess": "Sent successfully.",
+    "queuedExportsSent": "Sent {n} queued export(s).",
+    "confirmDelivery": "Did the file save/send successfully?",
+    "confirmDuplicateExport": "Part of this night was already sent. Send again anyway?",
+    "queuedForRetry": "Relay unreachable — the export is queued and will retry automatically once the network is back.",
+    "night": "Night"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "model": {
+      "title": "Transcription model",
+      "hint": "A larger model is more accurate but slower and needs a bigger one-time download.",
+      "tiny": { "name": "Tiny (~75 MB)", "description": "Fast, less accurate." },
+      "base": { "name": "Base (~140 MB)", "description": "Slower, more accurate." }
+    },
+    "transport": "Data transport",
+    "transportHint": "Choose how Echo sends dreams to Somnia or another app.",
+    "configure": "Configure",
+    "configured": "Configured",
+    "notConfigured": "Not configured",
+    "pendingExports": "Queued exports",
+    "pendingExportsCount": "Queued: {n}",
+    "retryNow": "Retry now"
+  },
+  "transport": {
+    "webShare": { "name": "Share from phone", "description": "AirDrop / Nearby Share, on each export." },
+    "cloudFolder": { "name": "Synced folder", "description": "Save into a folder (Dropbox / iCloud / Google Drive)." },
+    "relay": {
+      "name": "Local relay",
+      "description": "Send directly to a server on your home network.",
+      "promptEndpoint": "Echo Relay server address (e.g. http://192.168.1.20:4243):",
+      "promptSecret": "Relay key (must match the one on the server; leave blank for no authentication):"
+    },
+    "fileExport": { "name": "File export", "description": "Downloads a JSON file, always works." }
+  },
+  "modal": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "no": "No",
+    "send": "Send again",
+    "delete": "Delete"
+  },
+  "error": {
+    "shareFilesUnsupported": "File sharing isn't supported in this browser.",
+    "shareCancelled": "Share cancelled.",
+    "shareFailed": "Share failed.",
+    "relayNotConfigured": "Relay isn't configured.",
+    "relayUnreachable": "Relay server isn't reachable.",
+    "relayRejected": "Relay rejected the upload.",
+    "relayAuthFailed": "Relay rejected access — check the key in settings.",
+    "cloudFolderNotConfigured": "No folder selected.",
+    "cloudFolderPermissionDenied": "Folder access wasn't granted. Re-select it in settings.",
+    "cloudFolderWriteFailed": "Couldn't write to the folder.",
+    "micDenied": "Microphone access was denied.",
+    "storageFull": "Out of storage space. Free up space on your device and try again — the recording wasn't saved.",
+    "storageFailed": "Saving failed. The recording wasn't saved — try again."
+  }
+}

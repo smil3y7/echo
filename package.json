@@ -1,0 +1,9 @@
+{
+  "name": "echo",
+  "private": true,
+  "type": "module",
+  "description": "Dev-only manifest — not required to run the app itself (see README). Only used so `node --test` can resolve the ES module syntax used in lib/.",
+  "scripts": {
+    "test": "node --test"
+  }
+}

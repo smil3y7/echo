@@ -1,0 +1,84 @@
+{
+  "app": { "name": "Echo", "tagline": "Ujemi sanje, preden zbledijo" },
+  "nav": { "record": "Snemaj", "review": "Pregled", "settings": "Nastavitve" },
+  "record": {
+    "start": "Začni snemati",
+    "stop": "Ustavi",
+    "recording": "Snemam …",
+    "processing": "Prepisujem …",
+    "loadingModel": "Prvič nalagam model za prepis (samo enkrat) …",
+    "continuesPrevious": "Nadaljevanje prejšnjih sanj",
+    "newDream": "Nove sanje",
+    "sessionPrompt": "Zadnji posnetek pred kratkim — je to nadaljevanje?",
+    "savedToast": "Shranjeno"
+  },
+  "review": {
+    "title": "Pregled posnetkov",
+    "empty": "Ni posnetkov za pregled.",
+    "wakeTime": "Čas zbujanja",
+    "transcript": "Vsebina",
+    "markReviewed": "Označi kot pregledano",
+    "markUnreviewed": "Označi kot nepregledano",
+    "delete": "Izbriši",
+    "confirmDelete": "Izbrišem ta posnetek? Tega ni mogoče razveljaviti.",
+    "exportSession": "Izvozi to noč",
+    "exportSuccess": "Uspešno poslano.",
+    "queuedExportsSent": "Poslanih {n} čakajočih izvozov.",
+    "confirmDelivery": "Je bila datoteka uspešno shranjena/poslana?",
+    "confirmDuplicateExport": "Del te noči je bil že poslan. Vseeno pošlji znova?",
+    "queuedForRetry": "Relay ni dosegljiv — izvoz čaka v vrsti in se bo poskusil samodejno, ko bo omrežje na voljo.",
+    "night": "Noč"
+  },
+  "settings": {
+    "title": "Nastavitve",
+    "language": "Jezik",
+    "model": {
+      "title": "Model za prepis",
+      "hint": "Večji model je natančnejši, a počasnejši in zahteva večji enkraten prenos.",
+      "tiny": { "name": "Tiny (~75 MB)", "description": "Hitro, manj natančno." },
+      "base": { "name": "Base (~140 MB)", "description": "Počasneje, natančneje." }
+    },
+    "transport": "Prenos podatkov",
+    "transportHint": "Izberi, kako Echo pošlje sanje v Somnio ali drug app.",
+    "configure": "Nastavi",
+    "configured": "Nastavljeno",
+    "notConfigured": "Ni nastavljeno",
+    "pendingExports": "Izvozi v čakalni vrsti",
+    "pendingExportsCount": "V čakalni vrsti: {n}",
+    "retryNow": "Poskusi zdaj"
+  },
+  "transport": {
+    "webShare": { "name": "Deli preko telefona", "description": "AirDrop / Nearby Share, ob vsakem izvozu." },
+    "cloudFolder": { "name": "Sinhronizirana mapa", "description": "Shrani v mapo (Dropbox / iCloud / Google Drive)." },
+    "relay": {
+      "name": "Lokalni relay",
+      "description": "Pošlje direktno na strežnik v domačem omrežju.",
+      "promptEndpoint": "Naslov Echo Relay strežnika (npr. http://192.168.1.20:4243):",
+      "promptSecret": "Ključ za relay (mora se ujemati s tistim na strežniku; pusti prazno za brez avtentikacije):"
+    },
+    "fileExport": { "name": "Izvoz datoteke", "description": "Prenese JSON datoteko, deluje vedno." }
+  },
+  "modal": {
+    "ok": "V redu",
+    "cancel": "Prekliči",
+    "yes": "Da",
+    "no": "Ne",
+    "send": "Pošlji znova",
+    "delete": "Izbriši"
+  },
+  "error": {
+    "shareFilesUnsupported": "Deljenje datotek ni podprto v tem brskalniku.",
+    "shareCancelled": "Deljenje preklicano.",
+    "shareFailed": "Deljenje ni uspelo.",
+    "relayNotConfigured": "Relay ni nastavljen.",
+    "relayUnreachable": "Relay strežnik ni dosegljiv.",
+    "relayRejected": "Relay je zavrnil pošiljanje.",
+    "relayAuthFailed": "Relay je zavrnil dostop — preveri ključ v nastavitvah.",
+    "cloudFolderNotConfigured": "Mapa ni izbrana.",
+    "cloudFolderPermissionDenied": "Dostop do mape ni bil odobren. Ponovno jo izberi v nastavitvah.",
+    "cloudFolderWriteFailed": "Zapisovanje v mapo ni uspelo.",
+    "micDenied": "Dostop do mikrofona je bil zavrnjen.",
+    "storageFull": "Ni več prostora za shranjevanje. Sprosti prostor na napravi in poskusi znova — posnetek ni bil shranjen.",
+    "storageFailed": "Shranjevanje ni uspelo. Posnetek ni bil shranjen — poskusi znova."
+  }
+}
