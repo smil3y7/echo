@@ -3,6 +3,26 @@
 All notable changes to Echo are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.2.4] — 2026-07-25
+
+### Fixed
+- **Native context menu still reachable on the custom audio player.**
+  Removing the `controls` attribute (0.2.3) only removes the native
+  controls *toolbar* — Chrome and other browsers still attach a right-click
+  context menu ("More options", "Save audio as", etc.) to any `<audio>`
+  element regardless of `controls`, rendered in the browser/OS's own
+  language rather than the page's, which is why it kept appearing (in
+  Slovenian) even after the custom player was built. The underlying
+  `<audio>` element is now hidden (`display: none` — playback via JS is
+  unaffected) so there's nothing left to right-click, plus a
+  `contextmenu` listener that blocks it outright as a fallback.
+- **Player wasn't visually matching the transcript box.** Set explicit
+  `width: 100%` on `.audio-player` and swapped its background from the
+  lighter `--bg-elevated-2` (same tone as the textarea, which made the two
+  stacked boxes compete/stand out too much against the card) to the
+  darker `--bg` with a subtle 1px border, so it recedes rather than pops.
+  Increased the gap before the transcript box from 8px to 14px.
+
 ## [0.2.3] — 2026-07-25
 
 ### Fixed

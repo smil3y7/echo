@@ -316,10 +316,15 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background: var(--bg-elevated-2);
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--bg-elevated-2);
     border-radius: 10px;
     padding: 8px 12px;
-    margin-bottom: 8px;
+    margin-bottom: 14px;
+  }
+  .audio-player audio {
+    display: none; /* hidden -- driven entirely via JS, see wireAudioPlayer() */
   }
   .audio-play-btn {
     flex: none;
