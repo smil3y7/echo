@@ -3,6 +3,51 @@
 All notable changes to Echo are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.4.0] — 2026-07-26
+
+### Added
+- **Full-database backup/restore** (`lib/backup.js`, new Settings section).
+  Separate from the per-night export transports (relay/share/cloud-
+  folder/file-export), which only ever send one night's transcripts to
+  Somnia — this is a standalone safety net covering *every* capture
+  regardless of `review_status`, with audio embedded as base64 in a single
+  downloadable JSON file. Restore is non-destructive: any capture whose
+  `id` already exists locally is skipped rather than overwritten, so it's
+  safe to restore more than once (e.g. merging backups from two devices)
+  without clobbering local edits. Restore summarizes
+  restored/skipped/failed counts.
+- 5 new tests (`tests/backup.test.js`) covering backup content (audio
+  embedded correctly, captures without audio handled), restore
+  reconstruction (blob round-trips byte-for-byte), the non-destructive
+  skip behavior, and rejecting a malformed backup file. Suite is now 33
+  tests (was 28).
+
+### Changed
+- **Audio is no longer fetched from IndexedDB when Review renders.**
+  Previously, every capture's audio blob was read and decoded into an
+  object URL eagerly for every card shown, regardless of whether it was
+  ever played. This doesn't scale once there are months of nights in the
+  database — reviewing today's capture shouldn't require re-reading audio
+  for every night ever recorded. The blob is now fetched lazily, once, on
+  first play or download click, and cached in memory for the rest of the
+  session. Metadata (transcript, times, status) still loads immediately as
+  before.
+- `lib/backup.js`'s base64 conversion uses `Blob.arrayBuffer()` instead of
+  `FileReader`, specifically so it works in Node for testing, not just in
+  a browser.
+
+### Known limitations (updated)
+- Backup embeds audio as base64 in one JSON file/string, held fully in
+  memory while building it — reasonable at the personal scale this was
+  built for (dozens to a few hundred short recordings over months), but
+  would need a streaming/zip approach if the archive grows large enough
+  for that to matter. Not addressed now since there's no evidence yet that
+  it will.
+- Long-term scale beyond "lazy-load audio" (this release) — e.g. paginating
+  Review to avoid loading every capture's metadata at once, or collapsing
+  fully-imported nights to reduce DOM work — intentionally deferred until
+  actual usage shows it's needed, rather than guessing at a growth curve.
+
 ## [0.3.2] — 2026-07-26
 
 ### Fixed

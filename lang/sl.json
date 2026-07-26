@@ -48,7 +48,17 @@
     "notConfigured": "Ni nastavljeno",
     "pendingExports": "Izvozi v čakalni vrsti",
     "pendingExportsCount": "V čakalni vrsti: {n}",
-    "retryNow": "Poskusi zdaj"
+    "retryNow": "Poskusi zdaj",
+    "backup": {
+      "title": "Varnostna kopija",
+      "hint": "Ustvari eno datoteko z vsemi sanjami (vključno z avdiom), ne glede na status pregleda. Ločeno od izvoza v Somnio.",
+      "create": "Ustvari varnostno kopijo",
+      "restore": "Obnovi iz datoteke",
+      "createSuccess": "Varnostna kopija ustvarjena — {n} zapisov.",
+      "createFailed": "Ustvarjanje varnostne kopije ni uspelo.",
+      "restoreSummary": "Obnovljeno: {restored}. Že obstoječih (izpuščeno): {skipped}. Neuspešnih: {failed}.",
+      "restoreFailed": "Datoteka ni veljavna varnostna kopija ali je poškodovana."
+    }
   },
   "transport": {
     "webShare": { "name": "Deli preko telefona", "description": "AirDrop / Nearby Share, ob vsakem izvozu." },
@@ -81,6 +91,7 @@
     "cloudFolderPermissionDenied": "Dostop do mape ni bil odobren. Ponovno jo izberi v nastavitvah.",
     "cloudFolderWriteFailed": "Zapisovanje v mapo ni uspelo.",
     "micDenied": "Dostop do mikrofona je bil zavrnjen.",
+    "audioLoadFailed": "Posnetka ni bilo mogoče naložiti.",
     "storageFull": "Ni več prostora za shranjevanje. Sprosti prostor na napravi in poskusi znova — posnetek ni bil shranjen.",
     "storageFailed": "Shranjevanje ni uspelo. Posnetek ni bil shranjen — poskusi znova."
   }

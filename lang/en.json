@@ -48,7 +48,17 @@
     "notConfigured": "Not configured",
     "pendingExports": "Queued exports",
     "pendingExportsCount": "Queued: {n}",
-    "retryNow": "Retry now"
+    "retryNow": "Retry now",
+    "backup": {
+      "title": "Backup",
+      "hint": "Create one file with every dream (including audio), regardless of review status. Separate from exporting to Somnia.",
+      "create": "Create backup",
+      "restore": "Restore from file",
+      "createSuccess": "Backup created — {n} record(s).",
+      "createFailed": "Couldn't create the backup.",
+      "restoreSummary": "Restored: {restored}. Already present (skipped): {skipped}. Failed: {failed}.",
+      "restoreFailed": "That file isn't a valid backup, or it's corrupted."
+    }
   },
   "transport": {
     "webShare": { "name": "Share from phone", "description": "AirDrop / Nearby Share, on each export." },
@@ -81,6 +91,7 @@
     "cloudFolderPermissionDenied": "Folder access wasn't granted. Re-select it in settings.",
     "cloudFolderWriteFailed": "Couldn't write to the folder.",
     "micDenied": "Microphone access was denied.",
+    "audioLoadFailed": "Couldn't load the recording.",
     "storageFull": "Out of storage space. Free up space on your device and try again — the recording wasn't saved.",
     "storageFailed": "Saving failed. The recording wasn't saved — try again."
   }
