@@ -3,6 +3,23 @@
 All notable changes to Echo are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.3.0] — 2026-07-25
+
+### Added
+- **Download audio recordings.** Each capture card in Review now has a
+  small download button next to the play control, saving the raw
+  recording to the device as a file (extension inferred from
+  `audio_mime`: `.webm`, `.m4a`, `.ogg`, `.mp3`, or `.wav`, defaulting to
+  `.webm`). Filenames follow `echo_<session_date>_<sequence>.<ext>`, e.g.
+  `echo_2026-07-25_02.webm`. This is a plain browser download of the
+  already-fetched audio blob — no new transport, no change to what's sent
+  via relay/share/cloud-folder (those still only carry transcripts and
+  metadata per `SCHEMA.md`; audio itself was assumed to be a "save it out
+  of the app if you want it" action rather than something Somnia needs to
+  receive automatically). If it turns out Somnia should actually receive
+  the audio too, that's a bigger follow-up — say so and it can be scoped
+  separately.
+
 ## [0.2.4] — 2026-07-25
 
 ### Fixed

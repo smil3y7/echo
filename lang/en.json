@@ -19,6 +19,7 @@
     "transcript": "Content",
     "play": "Play",
     "pause": "Pause",
+    "downloadAudio": "Download recording",
     "markReviewed": "Mark reviewed",
     "markUnreviewed": "Mark unreviewed",
     "delete": "Delete",

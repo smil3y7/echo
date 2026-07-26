@@ -340,6 +340,24 @@
     cursor: pointer;
   }
   .audio-play-btn svg { width: 14px; height: 14px; }
+  .audio-download-btn {
+    flex: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid var(--text-faint);
+    background: none;
+    color: var(--text-faint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .audio-download-btn svg { width: 13px; height: 13px; }
+  .audio-download-btn:hover, .audio-download-btn:focus {
+    color: var(--text);
+    border-color: var(--ember);
+  }
   .audio-seek {
     flex: 1;
     height: 3px;
