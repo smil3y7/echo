@@ -3,6 +3,16 @@
 All notable changes to Echo are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.3.2] — 2026-07-26
+
+### Fixed
+- **Version text in Settings was hidden behind the bottom tab bar** on some
+  devices — almost certainly `100dvh` not accounting perfectly for mobile
+  browsers' address bar showing/hiding. Added extra bottom padding
+  specifically to the Review and Settings views (not Record, which
+  vertically centers its ring animation and would have looked visibly
+  off-center with the same padding applied uniformly).
+
 ## [0.3.1] — 2026-07-26
 
 ### Added
