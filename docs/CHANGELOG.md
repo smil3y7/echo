@@ -3,6 +3,33 @@
 All notable changes to Echo are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.3.1] — 2026-07-26
+
+### Added
+- **Test coverage for `lib/db.js`**, using `fake-indexeddb` (new
+  devDependency — only needed to run `node --test`, not to run the app
+  itself in a browser): capture/audio-blob CRUD, delete cleanup,
+  `markImported` idempotency, session grouping, and the pending-exports
+  queue. 16 new tests total (9 for `db.js`, 5 for the newly-extracted
+  `lib/audio-filename.js`, 3 for `lib/errors.js`), bringing the suite to 28.
+- **`lib/audio-filename.js` and `lib/errors.js`** — pulled the mime→extension
+  mapping/filename logic and the storage-error classification out of
+  `lib/app.js` (which can't be imported directly in Node/tests, since it
+  touches the DOM at module load) into their own dependency-free modules,
+  same pattern as `lib/session.js`.
+- **CI** — `.github/workflows/test.yml` runs `npm install && npm test` on
+  every push/PR.
+- **App version shown in Settings**, small and unobtrusive at the bottom of
+  the screen, pulled from `schema.js`'s `APP_VERSION` rather than hardcoded
+  in the HTML so it can't silently drift out of sync with a release.
+
+### Known limitations (updated)
+- Test coverage still doesn't reach the transport adapters (`relay.js`,
+  `web-share.js`, `cloud-folder.js`, `file-export.js`), `lib/modal.js`, or
+  the audio player wiring in `lib/app.js` — these stay DOM/fetch-coupled in
+  a way that would need `jsdom` or a headless-browser setup (Playwright) to
+  test properly, which felt like a bigger step to take without being asked.
+
 ## [0.3.0] — 2026-07-25
 
 ### Added
@@ -220,8 +247,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   `mkcert`) instead of plain HTTP, which was deliberately not built yet
   since the current setup works and mkcert requires installing a root
   certificate on the phone.
-- Relay has no rate limiting or request size cap — fine for personal use,
-  worth adding before wider distribution.
+- Relay's rate limiting (added in echo-relay, see its own README) is a flat
+  per-IP window, not adaptive — fine for a single personal relay, would want
+  revisiting before wider distribution.
 - Transcription runs on WASM only; Transformers.js also supports WebGPU
   acceleration on newer devices, which would be noticeably faster, but
   isn't wired up yet.

@@ -38,13 +38,15 @@ model (~tens of MB); after that it's fully offline.
 ## Tests
 
 ```bash
+npm install   # one-time, only for fake-indexeddb (used to test lib/db.js
+              # without a real browser) — not needed to run the app itself
 node --test
 ```
 
-No dependencies, no build step — just Node's built-in test runner against
-the pure logic in `lib/schema.js` and `lib/session.js`. The `package.json`
-in this repo exists only to mark the project as ES modules for Node; it's
-not used to run the app itself.
+28 tests covering the pure logic in `lib/schema.js`, `lib/session.js`,
+`lib/audio-filename.js`, `lib/errors.js`, and `lib/db.js` (via
+`fake-indexeddb`). A GitHub Action (`.github/workflows/test.yml`) runs this
+on every push/PR.
 
 ## Project layout
 

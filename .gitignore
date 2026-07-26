@@ -1,0 +1,6 @@
+# Dev-only, from `npm install` for running tests (see tests/, package.json).
+# Not needed to run the app itself — the browser never sees this folder.
+node_modules/
+
+.DS_Store
+Thumbs.db

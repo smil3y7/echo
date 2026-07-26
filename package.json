@@ -2,8 +2,11 @@
   "name": "echo",
   "private": true,
   "type": "module",
-  "description": "Dev-only manifest — not required to run the app itself (see README). Only used so `node --test` can resolve the ES module syntax used in lib/.",
+  "description": "Dev-only manifest — not required to run the app itself (see README). Used so `node --test` can resolve the ES module syntax used in lib/, and (via fake-indexeddb) test lib/db.js without a real browser.",
   "scripts": {
     "test": "node --test"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "^6.2.5"
   }
 }

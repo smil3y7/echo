@@ -2,12 +2,14 @@
 // Note: the Whisper model itself is cached separately by Transformers.js
 // (Cache Storage), this only covers the app's own HTML/JS/CSS/lang files.
 
-const CACHE_NAME = "echo-shell-v10";
+const CACHE_NAME = "echo-shell-v11";
 const SHELL_FILES = [
   "./index.html",
   "./manifest.json",
   "./lib/app.js",
+  "./lib/audio-filename.js",
   "./lib/db.js",
+  "./lib/errors.js",
   "./lib/modal.js",
   "./lib/recorder.js",
   "./lib/schema.js",
